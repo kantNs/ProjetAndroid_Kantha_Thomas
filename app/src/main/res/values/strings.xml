@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ProjetAndroid_Kantha_Thomas</string>
+    <!-- EditText Control Hint -->
+    <string name="movie_name_text_hint">Mettre nom de film (Obligatoire)</string>
+
+    <!-- Button Texts -->
+    <string name="search_button_text">Chercher film</string>
+
+    <!-- Constants -->
+    <string name="api_url">http://www.omdbapi.com/?plot=full&amp;r=json&amp;t=</string>
 </resources>
