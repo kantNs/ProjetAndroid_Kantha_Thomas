@@ -23,7 +23,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     //et par la même indiquer la vue à inflater (à partir des layout xml)
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int itemType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.film_Au_Hasard,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.film_au_hasard,viewGroup,false);
         return new MyViewHolder(view);
     }
 

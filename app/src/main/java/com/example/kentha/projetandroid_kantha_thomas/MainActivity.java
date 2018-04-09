@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         task.execute(api_url);
     }
 
+
     public void Randomiser(View view) {
         setContentView(R.layout.activity2);
         ajouterFilm();
@@ -123,9 +124,52 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(new MyAdapter(films));
     }
 
+    public void Traitement2(){
+        film = new RécupérerDetailDuFilm();
+        try {
+            film.mapJson(this.jsonData);
+            films.add(new MonFilm(""+film.movieName+"","https://www.gannett-cdn.com/-mm-/cabc9efca16c634c6659905c4fceb5d197388a0b/c=0-68-1399-1120&r=x393&c=520x390/local/-/media/2015/12/08/USATODAY/USATODAY/635851909778644878-XXX-d-Star-Wars-CDs-ZX24463.jpg"));
+
+        } catch (JSONException e) {
+            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void RecupJson2(String api_url){
+        @SuppressLint("StaticFieldLeak") AsyncTask<String,String,String> task = new AsyncTask<String, String, String>() {
+            @Override
+            protected String doInBackground(String... params) {
+                String response = "";
+                try{
+                    URL url = new URL(params[0]);
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    BufferedReader
+                            reader = new
+                            BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                    String line = "";
+                    while((line = reader.readLine()) != null){
+                        response += line + "\n";
+                    }
+                } catch (Exception e){
+                    return "Exception";
+                }
+                return response;
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                MainActivity.this.jsonData = result;
+                Traitement2();
+            }
+        };
+
+        task.execute(api_url);
+    }
+
     private void ajouterFilm() {
-        films.add(new MonFilm("Pirates des Caraibes","http://www.google.fr/intl/en_com/images/srpr/logo1w.png"));
-        films.add(new MonFilm("Star Trek","http://flags.fmcdn.net/data/flags/w580/fr.png"));
+        String api_url = getResources().getString(R.string.api_url) +"Star Wars"+"&apikey=ab007825";
+        RecupJson2(api_url);
+        films.add(new MonFilm("Star Trek","http://www.startrekmovie.com/images/share.jpg"));
         films.add(new MonFilm("Ok","http://flags.fmcdn.net/data/flags/w580/fr.png"));
         films.add(new MonFilm("Up","http://flags.fmcdn.net/data/flags/w580/fr.png"));
         films.add(new MonFilm("Avatar","http://www.google.fr/intl/en_com/images/srpr/logo1w.png"));
