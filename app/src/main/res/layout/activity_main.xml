@@ -6,13 +6,20 @@
     tools:context="com.example.kentha.projetandroid_kantha_thomas.MainActivity"
     android:orientation="vertical">
 
-    <EditText
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="@string/movie_name_text_hint"
+        android:text="@string/random_button_text"
+        android:id="@+id/random_buttom"
+        android:onClick="Randomiser"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/editText" />
+        android:hint="@string/movie_name_text_hint"
+        android:inputType="textPersonName" />
 
     <Button
         android:layout_width="match_parent"
@@ -69,5 +76,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/noteImdb" />
         </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

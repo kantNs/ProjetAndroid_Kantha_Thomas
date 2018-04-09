@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,8 +17,13 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+
+    private List<MonFilm> films = new ArrayList<>();
     EditText zoneEdition;
     String jsonData;
     RécupérerDetailDuFilm film;
@@ -98,4 +105,31 @@ public class MainActivity extends AppCompatActivity {
 
         task.execute(api_url);
     }
+
+    public void Randomiser(View view) {
+        setContentView(R.layout.activity2);
+        ajouterFilm();
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+
+        //définit l'agencement des cellules, ici de façon verticale, comme une ListView
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //pour adapter en grille comme une RecyclerView, avec 2 cellules par ligne
+        //recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+
+        //puis créer un MyAdapter, lui fournir notre liste de villes.
+        //cet adapter servira à remplir notre recyclerview
+        recyclerView.setAdapter(new MyAdapter(films));
+    }
+
+    private void ajouterFilm() {
+        films.add(new MonFilm("Pirates des Caraibes","http://www.google.fr/intl/en_com/images/srpr/logo1w.png"));
+        films.add(new MonFilm("Star Trek","http://flags.fmcdn.net/data/flags/w580/fr.png"));
+        films.add(new MonFilm("Ok","http://flags.fmcdn.net/data/flags/w580/fr.png"));
+        films.add(new MonFilm("Up","http://flags.fmcdn.net/data/flags/w580/fr.png"));
+        films.add(new MonFilm("Avatar","http://www.google.fr/intl/en_com/images/srpr/logo1w.png"));
+        films.add(new MonFilm("Mars","http://www.google.fr/intl/en_com/images/srpr/logo1w.png"));
+    }
+
 }

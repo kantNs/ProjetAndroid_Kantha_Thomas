@@ -8,4 +8,5 @@
 
     <!-- Constants -->
     <string name="api_url">http://www.omdbapi.com/?plot=full&amp;r=json&amp;t=</string>
+    <string name="random_button_text">Trouver au hasard</string>
 </resources>
