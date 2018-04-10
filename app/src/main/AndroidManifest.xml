@@ -16,6 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActvity2"
+            android:label="@string/app_name" android:enabled="true" android:finishOnTaskLaunch="true">
+        </activity>
+        <receiver
+            android:name=".DownloadReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="projetandroid_kantha_thomas.CUSTOM_INTENT" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
