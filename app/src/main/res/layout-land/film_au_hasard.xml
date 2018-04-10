@@ -39,9 +39,10 @@
             android:background="?android:selectableItemBackground"
             android:padding="20dp"
             tools:text="Film"
-            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:fontFamily="Times_New_Roman"
             android:textColor="#333"
-            android:textSize="18sp" />
+            android:textSize="22dp" />
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

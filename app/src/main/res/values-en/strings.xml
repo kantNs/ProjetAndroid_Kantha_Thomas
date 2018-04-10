@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidProject_Kantha_And_Thomas</string>
+    <!-- EditText Control Hint -->
+    <string name="movie_name_text_hint">what is your movie? (Needed)</string>
+
+    <!-- Button Texts -->
+    <string name="search_button_text">Search a movie</string>
+
+    <!-- Constants -->
+    <string name="api_url">http://www.omdbapi.com/?plot=full&amp;r=json&amp;t=</string>
+    <string name="random_button_text">Find randomly</string>
+</resources>
