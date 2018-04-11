@@ -1,9 +1,11 @@
 package com.example.kentha.projetandroid_kantha_thomas;
 
 import android.annotation.SuppressLint;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -129,11 +131,14 @@ public class MainActivity extends AppCompatActivity {
         Notificy();
     }
 
-    private void Notificy() {
+    private void Notificy() { // pour notifier test
         Intent intent = new Intent();
         intent.setAction("projetandroid_kantha_thomas.CUSTOM_INTENT");
         sendBroadcast(intent);
     }
+
+
+
 
 
 }

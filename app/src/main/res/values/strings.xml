@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ProjetAndroid_Kantha_Thomas</string>
     <!-- EditText Control Hint -->
-    <string name="movie_name_text_hint">Mettre nom de film (Obligatoire)</string>
+    <string name="movie_name_text_hint">Mettre nom de film en anglais (Obligatoire)</string>
 
     <!-- Button Texts -->
     <string name="search_button_text">Chercher film</string>

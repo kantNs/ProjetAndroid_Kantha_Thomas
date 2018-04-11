@@ -9,14 +9,14 @@ public class RécupérerDetailDuFilm {
 
     public void mapJson(String jsonData) throws JSONException {
         JSONObject movieData = new JSONObject(jsonData);
-        movieName = "Movie: " + movieData.getString("Title");
-        movieYear = "Year: " + movieData.getString("Year");
+        movieName = "Film: " + movieData.getString("Title");
+        movieYear = "Année: " + movieData.getString("Year");
         genre = "Genre: " + movieData.getString("Genre");
-        director = "Director: " + movieData.getString("Director");
-        writer = "Writer:" + movieData.getString("Writer");
-        actors = "Actors: " + movieData.getString("Actors");
-        plot = "Plot: " + movieData.getString("Plot");
-        language = "Language: " + movieData.getString("Language");
-        imdbRating = "IMDB Rating: " + movieData.getString("imdbRating");
+        director = "Realisateur: " + movieData.getString("Director");
+        writer = "Scenariste:" + movieData.getString("Writer");
+        actors = "Casting: " + movieData.getString("Actors");
+        plot = "Synopsis: " + movieData.getString("Plot");
+        language = "Langage: " + movieData.getString("Language");
+        imdbRating = "IMDB Note: " + movieData.getString("imdbRating");
     }
 }
